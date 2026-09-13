@@ -36,7 +36,7 @@ function formatAndHighlightJson(jsonStr: string, searchFilter: string): Formatte
 
     // Syntax highlight regex
     const highlighted = line.replace(
-      /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+      /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g,
       match => {
         let cls = 'color: #38bdf8;'; // number/cyan default
         if (/^"/.test(match)) {
@@ -85,7 +85,7 @@ function formatAndHighlightJson(jsonStr: string, searchFilter: string): Formatte
           keyLower.includes('secret') ||
           keyLower.includes('key') ||
           extractedValue.startsWith('eyJ') ||
-          (extractedValue.length >= 30 && /^[a-zA-Z0-9_\-\.]+$/.test(extractedValue));
+          (extractedValue.length >= 30 && /^[a-zA-Z0-9_.-]+$/.test(extractedValue));
       }
     }
 

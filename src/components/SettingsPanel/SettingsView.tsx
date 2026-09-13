@@ -120,9 +120,17 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
               style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}
               value={settings.corsProxyUrl}
               onChange={e => handleProxyUrlChange(e.target.value)}
-              placeholder="https://api.allorigins.win/raw?url="
+              placeholder="/api/proxy"
             />
             <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginTop: '4px' }}>
+              <button
+                type="button"
+                className="pill-tab"
+                style={{ fontSize: '10px', padding: '2px 8px' }}
+                onClick={() => handleProxyUrlChange('/api/proxy')}
+              >
+                Built-in (/api/proxy)
+              </button>
               <button
                 type="button"
                 className="pill-tab"
