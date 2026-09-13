@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Background Dark Gradient -->
+    <linearGradient id="bgDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141416" />
+      <stop offset="50%" stop-color="#0a0a0c" />
+      <stop offset="100%" stop-color="#020202" />
+    </linearGradient>
+
+    <!-- Orange Border / Accent Gradient -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9900" />
+      <stop offset="50%" stop-color="#ff6b00" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+
+    <!-- Face Golden Glow Gradient -->
+    <radialGradient id="faceGrad" cx="38%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#ffe066" />
+      <stop offset="45%" stop-color="#ffb703" />
+      <stop offset="85%" stop-color="#fb8500" />
+      <stop offset="100%" stop-color="#e36400" />
+    </radialGradient>
+
+    <!-- Tongue Gradient -->
+    <linearGradient id="tongueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="50%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Base Black Squircle Container -->
+  <rect width="512" height="512" rx="116" fill="url(#bgDarkGrad)" stroke="url(#orangeGrad)" stroke-width="10" />
+
+  <!-- Subtle Orange Ambient Halo -->
+  <circle cx="256" cy="256" r="190" fill="#ff7700" opacity="0.12" filter="url(#neonGlow)" />
+
+  <!-- Playful Code Bracket Accents in Dark Background -->
+  <g opacity="0.22" stroke="url(#orangeGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left curly brace hint -->
+    <path d="M 85 220 C 70 220, 60 232, 60 244 L 60 248 C 60 254, 50 256, 42 256 C 50 256, 60 258, 60 264 L 60 268 C 60 280, 70 292, 85 292" />
+    <!-- Right curly brace hint -->
+    <path d="M 427 220 C 442 220, 452 232, 452 244 L 452 248 C 452 254, 462 256, 470 256 C 462 256, 452 258, 452 264 L 452 268 C 452 280, 442 292, 427 292" />
+  </g>
+
+  <!-- Emoji Head (Face) -->
+  <circle cx="256" cy="256" r="162" fill="url(#faceGrad)" filter="url(#dropShadow)" />
+
+  <!-- 3D Top-Left Sphere Highlight -->
+  <ellipse cx="215" cy="155" rx="75" ry="36" transform="rotate(-28 215 155)" fill="#ffffff" opacity="0.3" />
+
+  <!-- Cheerful Blush Cheeks -->
+  <ellipse cx="140" cy="285" rx="26" ry="16" fill="#f43f5e" opacity="0.32" />
+  <ellipse cx="372" cy="285" rx="26" ry="16" fill="#f43f5e" opacity="0.32" />
+
+  <!-- EYES -->
+  <!-- Left Eye: Playful Wink Arc 😉 -->
+  <path d="M 152 216 C 168 185, 206 185, 222 216" 
+        stroke="#1c1917" stroke-width="16" stroke-linecap="round" fill="none" />
+
+  <!-- Right Eye: Big Joyful Open Eye -->
+  <circle cx="316" cy="208" r="28" fill="#1c1917" />
+  <!-- Eye Highlights (Glimmer) -->
+  <circle cx="307" cy="199" r="10" fill="#ffffff" />
+  <circle cx="328" cy="218" r="5" fill="#ffffff" />
+
+  <!-- Eyebrows: Cute expressive curves -->
+  <path d="M 154 175 C 172 160, 204 163, 218 178" stroke="#78350f" stroke-width="9" stroke-linecap="round" fill="none" />
+  <path d="M 292 165 C 310 152, 338 155, 350 172" stroke="#78350f" stroke-width="9" stroke-linecap="round" fill="none" />
+
+  <!-- MOUTH & MELET TONGUE (Emot Melel 😛) -->
+  <!-- Dark Mouth Cavity -->
+  <path d="M 172 268 Q 256 295 340 268 Q 330 358 256 358 Q 182 358 172 268 Z" fill="#292524" />
+
+  <!-- Sticking Out Tongue (Melet!) -->
+  <g>
+    <!-- Tongue Base & Curve -->
+    <path d="M 214 286 C 214 388, 298 388, 298 286 Z" fill="url(#tongueGrad)" filter="url(#dropShadow)" />
+    
+    <!-- Tongue Center Crease Line -->
+    <path d="M 256 294 L 256 352" stroke="#be123c" stroke-width="6" stroke-linecap="round" />
+    
+    <!-- Tongue Glossy Shine -->
+    <path d="M 226 312 C 228 348, 246 364, 252 366" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.45" fill="none" />
+  </g>
+
+  <!-- Upper Lip Smile Overhang -->
+  <path d="M 166 268 Q 256 292 346 268" stroke="#1c1917" stroke-width="12" stroke-linecap="round" fill="none" />
+</svg>
