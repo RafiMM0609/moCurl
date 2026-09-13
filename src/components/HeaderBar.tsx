@@ -40,7 +40,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
           title="Paste cURL from Clipboard"
           onClick={onPasteCurl}
         >
-          <ClipboardPaste size={18} />
+          <ClipboardPaste size={16} />
         </button>
 
         {/* Manual cURL Import Modal */}
@@ -51,7 +51,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
             title="Import Raw cURL Command"
             onClick={onOpenCurlModal}
           >
-            <Terminal size={18} style={{ color: 'var(--accent-primary)' }} />
+            <Terminal size={16} style={{ color: 'var(--accent-primary)' }} />
           </button>
         )}
 
@@ -63,9 +63,9 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
           onClick={onToggleCorsProxy}
         >
           {settings.useCorsProxy ? (
-            <Shield size={18} style={{ color: 'var(--color-info)' }} />
+            <Shield size={16} style={{ color: 'var(--color-info)' }} />
           ) : (
-            <ShieldAlert size={18} style={{ color: 'var(--text-muted)' }} />
+            <ShieldAlert size={16} style={{ color: 'var(--text-muted)' }} />
           )}
         </button>
 
@@ -76,7 +76,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
           title="Export as cURL / Fetch / Python"
           onClick={onOpenExportModal}
         >
-          <Code2 size={18} />
+          <Code2 size={16} />
         </button>
 
         {/* Active Environment Selector */}
@@ -84,10 +84,10 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
           id="btn-env-select"
           className="env-button"
           onClick={onOpenEnvModal}
-          title="Manage Environments"
+          title={activeEnv ? `Environment: ${activeEnv.name}` : 'Manage Environments'}
         >
-          <Layers size={12} />
-          <span>{activeEnv ? activeEnv.name : 'No Env'}</span>
+          <Layers size={12} className="env-icon" />
+          <span className="env-name">{activeEnv ? activeEnv.name : 'No Env'}</span>
           {activeEnv && <span className="env-dot" />}
         </button>
       </div>

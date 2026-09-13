@@ -212,7 +212,7 @@ export const ResponseViewer: React.FC<ResponseViewerProps> = ({
       </div>
 
       {/* Tab Contents */}
-      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
         {subTab === 'pretty' && (
           <JsonViewer
             jsonString={response.body || (response.error ? `// Error details:\n${response.error}` : '// Empty body')}
@@ -221,7 +221,7 @@ export const ResponseViewer: React.FC<ResponseViewerProps> = ({
         )}
 
         {subTab === 'raw' && (
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', position: 'relative' }}>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', position: 'relative', minHeight: 0 }}>
             <div style={{
               display: 'flex',
               justifyContent: 'flex-end',
@@ -250,6 +250,7 @@ export const ResponseViewer: React.FC<ResponseViewerProps> = ({
                 fontFamily: 'var(--font-mono)',
                 fontSize: '12px',
                 padding: '12px',
+                paddingBottom: '28px',
                 resize: 'none',
                 outline: 'none',
                 lineHeight: 1.5,
@@ -262,7 +263,7 @@ export const ResponseViewer: React.FC<ResponseViewerProps> = ({
         )}
 
         {subTab === 'headers' && (
-          <div style={{ flex: 1, overflowY: 'auto', padding: '12px 14px' }}>
+          <div style={{ flex: 1, overflowY: 'auto', padding: '12px 14px', paddingBottom: '28px', minHeight: 0 }}>
             {Object.keys(response.headers).length === 0 ? (
               <div style={{ color: 'var(--text-muted)', fontSize: '12px', textAlign: 'center', padding: '24px' }}>
                 No response headers available.

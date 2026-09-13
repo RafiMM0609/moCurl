@@ -275,7 +275,7 @@ export const App: React.FC = () => {
       {/* Main Viewport Content Area */}
       <main className="content-area">
         {activeTab === 'request' && (
-          <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
             {/* Top Method + URL input + Send */}
             <UrlBar
               request={request}
@@ -295,7 +295,7 @@ export const App: React.FC = () => {
             />
 
             {/* Tab Editor Contents */}
-            <div style={{ flex: 1, overflowY: 'auto' }}>
+            <div style={{ flex: 1, overflowY: 'auto', minHeight: 0, paddingBottom: '24px' }}>
               {requestSubTab === 'params' && (
                 <KeyValueEditor
                   items={request.params}
